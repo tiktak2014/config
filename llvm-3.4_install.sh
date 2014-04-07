@@ -8,11 +8,11 @@ COMPILER_RT_SRC='http://llvm.org/releases/3.4/compiler-rt-3.4.src.tar.gz'
 CLANG_TOOLS_EXTRA='http://llvm.org/releases/3.4/clang-tools-extra-3.4.src.tar.gz'
 LIBCXX_SRC='http://llvm.org/releases/3.4/libcxx-3.4.src.tar.gz'
 
-#wget -c $CLANG_SRC -P $SRC_ROOT
-#wget -c $LLVM_SRC -P $SRC_ROOT
-#wget -c $COMPILER_RT_SRC -P $SRC_ROOT
-#wget -c $CLANG_TOOLS_EXTRA -P $SRC_ROOT
-#wget -c $LIBCXX_SRC -P $SRC_ROOT
+wget -c $CLANG_SRC -P $SRC_ROOT
+wget -c $LLVM_SRC -P $SRC_ROOT
+wget -c $COMPILER_RT_SRC -P $SRC_ROOT
+wget -c $CLANG_TOOLS_EXTRA -P $SRC_ROOT
+wget -c $LIBCXX_SRC -P $SRC_ROOT
 
 ## extract tarballs
 for file in `ls $SRC_ROOT/*.tar.gz`; do
