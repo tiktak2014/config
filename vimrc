@@ -74,6 +74,8 @@ set matchtime=2
 set scrolloff=5
 set laststatus=2
 
+set colorcolumn=80 " 高亮显示第80行，vim7.3以上版本支持
+
 " ========================================================
 " more configuration
 " ========================================================
@@ -97,8 +99,6 @@ func! DeleteTrailingWS()
     exe "normal `z"
 endfunc
 autocmd * :call DeleteTrailingWS()
-
-autocmd BufRead,BufNewFile *.py set colorcolumn=80
 
 " ========================================================
 " color scheme
@@ -141,11 +141,44 @@ let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccache']
 
+" ================  ============================
+" Key               Command
+" ================  ============================
+" [[                Jump to previous class or function (normal, visual, operator modes)
+" ]]                Jump to next class or function  (normal, visual, operator modes)
+" [M                Jump to previous class or method (normal, visual, operator modes)
+" ]M                Jump to next class or method (normal, visual, operator modes)
+" aC                Select a class. Ex: vaC, daC, yaC, caC (normal, operator modes)
+" iC                Select inner class. Ex: viC, diC, yiC, ciC (normal, operator modes)
+" aM                Select a function or method. Ex: vaM, daM, yaM, caM (normal, operator modes)
+" iM                Select inner function or method. Ex: viM, diM, yiM, ciM (normal, operator modes)
+" ================  ============================
+
 let g:pymode_rope = 1
 let g:pymode_rope_show_doc_bind = '<C-c>d'
+let g:pymode_rope_regenerate_on_write = 1
 let g:pymode_rope_completion = 1
 let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_modules = ['os', 'shutils', 'datetime']
+let g:pymode_rope_autoimport_import_after_complete = 0
+
+let g:pymode_rope_goto_definition_bind = '<C-c>g'
+let g:pymode_rope_goto_definition_cmd = 'new'
+
+let g:pymode_rope_rename_bind = '<C-c>rr'
+let g:pymode_rope_rename_module_bind = '<C-c>r1r'
+let g:pymode_rope_organize_imports_bind = '<C-c>ro'
+let g:pymode_rope_autoimport_bind = '<C-c>ra'
+" PymodeRopeModuleToPackage
+let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
+
+let g:pymode_rope_extrack_method_bind = '<C-c>rm'
+let g:pymode_rope_extrack_variable_bind = '<C-c>rl'
+let g:pymode_rope_use_function_bind = '<C-c>ru'
+
+let g:pymode_rope_move_bind = '<C-c>rv'
+let g:pymode_rope_change_signature_bind = '<C-c>rs'
 
 let g:pymode_syntax = 1
 let g:pymode_syntax_slow_sync = 1
