@@ -213,17 +213,16 @@ let g:pymode_syntax_docstrings = g:pymode_syntax_all
 " ========================================================
 " indentLine
 " ========================================================
-" 默认关闭
-let g:indentLine_loaded = 1
-let g:indentLine_enabled = 1
-let g:indentLine_fileType = ['python', 'c', 'cpp']
+"let g:indentLine_loaded = 1
+"let g:indentLine_enabled = 1
+"let g:indentLine_fileType = ['python', 'c', 'cpp']
 
 " ========================================================
 " ctrlp
 " ========================================================
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 set wildignore+=*.png,*jpg,*.gif
-set wildignore+=*.avi,*.rmvb
+set wildignore+=*.avi,*.rmvb,*.wmv,*.rm
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
