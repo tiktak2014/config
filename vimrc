@@ -17,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
@@ -29,10 +30,13 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'godlygeek/csapprox'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'junegunn/seoul256.vim'
 
 call neobundle#end()
 
 " Required:
+filetype on
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
@@ -66,6 +70,8 @@ set t_vb=
 set tm=500
 
 set shortmess=atI  " 不要显示援助乌干达儿童的提示
+set mouse=v
+set magic
 
 set wildmenu
 set lazyredraw
@@ -73,8 +79,6 @@ set showmatch
 set matchtime=2
 set scrolloff=5
 set laststatus=2
-
-set colorcolumn=80 " 高亮显示第80行，vim7.3以上版本支持
 
 " ========================================================
 " more configuration
@@ -100,6 +104,12 @@ func! DeleteTrailingWS()
 endfunc
 autocmd * :call DeleteTrailingWS()
 
+" 高亮显示第80行，vim7.3以上版本支持
+autocmd BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h set colorcolumn=80 
+
+" 在被分割的窗口间显示空白
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
+
 " ========================================================
 " color scheme
 " ========================================================
@@ -108,6 +118,8 @@ set t_Co=256
 set number
 set cursorline
 colorscheme mymolokai
+"let g:hybrid_use_Xresources = 1
+"colorscheme seoul256
 
 " ========================================================
 " airline
@@ -197,3 +209,22 @@ let g:pymode_syntax_builtin_objs = g:pymode_syntax_all
 let g:pymode_syntax_builtin_types = g:pymode_syntax_all
 let g:pymode_syntax_highlight_exceptions = g:pymode_syntax_all
 let g:pymode_syntax_docstrings = g:pymode_syntax_all
+
+" ========================================================
+" indentLine
+" ========================================================
+" 默认关闭
+let g:indentLine_loaded = 1
+let g:indentLine_enabled = 1
+let g:indentLine_fileType = ['python', 'c', 'cpp']
+
+" ========================================================
+" ctrlp
+" ========================================================
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
+set wildignore+=*.png,*jpg,*.gif
+set wildignore+=*.avi,*.rmvb
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
+let g:ctrlp_extensions = ['funky']
