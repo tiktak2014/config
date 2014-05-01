@@ -105,7 +105,7 @@ endfunc
 autocmd * :call DeleteTrailingWS()
 
 " 高亮显示第80行，vim7.3以上版本支持
-autocmd BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h set colorcolumn=80 
+" autocmd BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h set colorcolumn=80 
 
 " 在被分割的窗口间显示空白
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
@@ -227,3 +227,11 @@ set wildignore+=*.avi,*.rmvb,*.wmv,*.rm
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = '\v\.(exe|so|dll)$'
 let g:ctrlp_extensions = ['funky']
+
+" ========================================================
+" youcompleteme
+" ========================================================
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
