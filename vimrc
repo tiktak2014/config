@@ -22,7 +22,6 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'klen/python-mode'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vim-scripts/matchit.zip'
@@ -30,8 +29,13 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'godlygeek/csapprox'
+NeoBundle 'vim-scripts/a.vim'
+
+NeoBundle 'Valloric/YouCompleteMe'
+
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'junegunn/seoul256.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -110,6 +114,18 @@ autocmd * :call DeleteTrailingWS()
 " 在被分割的窗口间显示空白
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set guioptions-=r
+    set guioptions-=l
+    set guioptions-=m
+    set t_Co=256
+    set guitablabel=%M\ %t
+    set guifont=Hermit\ Medium\ 10
+    set ambiwidth=double
+endif
+
 " ========================================================
 " color scheme
 " ========================================================
@@ -117,9 +133,21 @@ set background=dark
 set t_Co=256
 set number
 set cursorline
-colorscheme mymolokai
+"colorscheme mymolokai
 "let g:hybrid_use_Xresources = 1
+"colorscheme hybrid
 "colorscheme seoul256
+
+let g:solarized_termcolors = 256
+let g:solarized_termtrans = 1
+let g:solarized_contrast = "normal"
+let g:solarized_visibility = "normal"
+colorscheme solarized
+
+highlight clear SignColumn
+highlight clear LineNr
+
+let g:CSApprox_hook_post = ['hi clear SignColumn']
 
 " ========================================================
 " airline
