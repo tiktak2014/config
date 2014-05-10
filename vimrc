@@ -83,6 +83,7 @@ set showmatch
 set matchtime=2
 set scrolloff=5
 set laststatus=2
+set backspace=2
 
 " ========================================================
 " more configuration
@@ -261,5 +262,10 @@ let g:ctrlp_extensions = ['funky']
 " ========================================================
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_key_invoke_completion = '<C-/>'
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <F9> :YcmCompleter GoToDefinitionElseDeclaration<CR>
