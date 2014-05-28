@@ -33,14 +33,14 @@ mv compiler-rt llvm/projects/
 mkdir llvm-build
 cd llvm-build
 ../llvm/configure --enable-optimized --enable-targets=host-only --with-python=/opt/python27/bin/python
-make -j8 && sudo make install
+make clean && make && sudo make install
 
 ## build libcxx
-cd ../libcxx-3.4/lib
-./buildit
-sudo cp ./libc++.so.1.0 /usr/lib
-cd /usr/lib
-sudo ln -sf libc++.so.1.0 libc++.so
-sudo ln -sf libc++.so.1.0 libc++.so.1
-cd -
-cp -r ../include /usr/include/c++/v1
+# cd ../libcxx-3.4/lib
+# ./buildit
+# sudo cp ./libc++.so.1.0 /usr/lib
+# cd /usr/lib
+# sudo ln -sf libc++.so.1.0 libc++.so
+# sudo ln -sf libc++.so.1.0 libc++.so.1
+# cd -
+# cp -r ../include /usr/include/c++/v1
