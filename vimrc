@@ -18,7 +18,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'tomasr/molokai'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'majutsushi/tagbar'
@@ -32,10 +31,12 @@ NeoBundle 'godlygeek/csapprox'
 NeoBundle 'vim-scripts/a.vim'
 
 NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'tomasr/molokai'
 
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'junegunn/seoul256.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'w0ng/vim-hybrid'
+"NeoBundle 'junegunn/seoul256.vim'
+"NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -134,19 +135,7 @@ set background=dark
 set t_Co=256
 set number
 set cursorline
-"colorscheme mymolokai
-"let g:hybrid_use_Xresources = 1
-"colorscheme hybrid
-"colorscheme seoul256
-
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 1
-let g:solarized_contrast = "normal"
-let g:solarized_visibility = "normal"
-colorscheme solarized
-
-highlight clear SignColumn
-highlight clear LineNr
+colorscheme base16-default
 
 let g:CSApprox_hook_post = ['hi clear SignColumn']
 
