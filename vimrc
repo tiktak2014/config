@@ -29,14 +29,16 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'godlygeek/csapprox'
 NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'fisadev/vim-isort'
+NeoBundle 'evanmiller/nginx-vim-syntax'
 
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'tomasr/molokai'
+"NeoBundle 'chriskempson/base16-vim'
+"NeoBundle 'tomasr/molokai'
 
 "NeoBundle 'w0ng/vim-hybrid'
 "NeoBundle 'junegunn/seoul256.vim'
-"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -92,6 +94,7 @@ set backspace=2
 autocmd BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
 autocmd BufRead,BufNewFile *.{go} set filetype=go
 autocmd BufRead,BufNewFile *.{js} set filetype=javascript
+autocmd BufRead,BufNewFile *.{html,xml} set ts=2 | set sw=2 | set sts=2
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -131,11 +134,18 @@ endif
 " ========================================================
 " color scheme
 " ========================================================
-set background=dark
+set background=light
 set t_Co=256
 set number
 set cursorline
-colorscheme base16-default
+"colorscheme base16-default
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+let g:solarized_degrade=1
+colorscheme solarized
 
 let g:CSApprox_hook_post = ['hi clear SignColumn']
 
