@@ -33,7 +33,8 @@ NeoBundle 'fisadev/vim-isort'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 
 NeoBundle 'Valloric/YouCompleteMe'
-"NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'chriskempson/base16-vim'
 "NeoBundle 'tomasr/molokai'
 
 "NeoBundle 'w0ng/vim-hybrid'
@@ -114,7 +115,9 @@ endfunc
 autocmd * :call DeleteTrailingWS()
 
 " 高亮显示第80行，vim7.3以上版本支持
-" autocmd BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h set colorcolumn=80 
+autocmd BufRead,BufNewFile *.py,*.c,*.cc,*.cpp,*.h set colorcolumn=80 
+autocmd BufRead,BufNewFile * set ts=4 | set sts=4 | set sw=4 | set expandtab
+autocmd BufRead,BufNewFile *.html,*.xml set ts=2 | set sts=2 | set sw=2 | set expandtab
 
 " 在被分割的窗口间显示空白
 set fillchars=vert:\ ,stl:\ ,stlnc:\ 
@@ -134,18 +137,18 @@ endif
 " ========================================================
 " color scheme
 " ========================================================
-set background=light
+set background=dark
 set t_Co=256
 set number
 set cursorline
-"colorscheme base16-default
+colorscheme base16-default
 
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-let g:solarized_degrade=1
-colorscheme solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+"let g:solarized_contrast="high"
+"let g:solarized_visibility="high"
+"let g:solarized_degrade=1
+"colorscheme solarized
 
 let g:CSApprox_hook_post = ['hi clear SignColumn']
 
@@ -179,7 +182,7 @@ let g:pymode_doc = 1
 let g:pymode_doc_bind = 'K'
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccache']
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 
 " ================  ============================
 " Key               Command
